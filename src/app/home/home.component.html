@@ -1,0 +1,23 @@
+  
+<div class="content">
+    <div class="container">
+      <div class="row" *ngFor="let post of posts | async">
+        <div class="card " style="width: 18rem;">
+            <div class="card-body">
+          <h3 ><a href="/post/{{post.id}}" class="card-title ">{{post.title}}</a></h3 >
+          <div>
+              <hr>
+            <h6><i class="fas fa-user card-subtitle mb-2 text-muted"></i> Author: <p>{{post.username}}</p></h6>
+          </div>
+          <hr>
+         <div class="card-text"> <p [innerHTML]="post.content"></p> </div>
+         <hr>
+          <div>
+            <a type="button" href="/post/{{post.id}}" class="btn btn-info">Read More</a>
+          </div>
+        </div>
+        <hr>
+        <br>
+      </div>
+    </div>
+  
